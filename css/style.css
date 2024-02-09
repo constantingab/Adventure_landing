@@ -1,0 +1,172 @@
+@import url(https://fonts.googleapis.com/css?family=Anton:regular);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+main {
+  color: #fff;
+}
+
+p {
+  font-size: 1, 1em;
+  margin: 1.5em 0;
+  line-height: 34px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.content {
+  font-family: Anton, sans-serif;
+  min-height: 30em;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content__text,
+.about-text,
+.divider,
+.content {
+  background-color: #000;
+}
+
+.content__text,
+.content,
+.divider,
+.call {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__text,
+.divider,
+.about,
+.call__btn {
+  position: relative;
+  z-index: 1;
+}
+
+.content__text {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  mix-blend-mode: multiply;
+  font-size: clamp(2em, 20vw, 10em);
+  text-align: center;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+}
+
+.background-video {
+  position: fixed;
+  max-width: 1200px;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.content__text span,
+.content__text small {
+  animation: fadeIn 800ms ease-out forwards;
+  opacity: 0;
+}
+
+.content__text span {
+  animation-delay: 200ms;
+}
+
+.content__text small {
+  font-size: 0.5em;
+  animation-delay: 1000ms;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.divider {
+  height: 8em;
+  padding: 2em;
+}
+
+.divider h1 {
+  font-size: 2em;
+}
+
+.call {
+  min-height: 30em;
+  padding: 2.5em;
+}
+
+.call__btn {
+  font-family: "Anton", sans-serif;
+  background-color: #fff;
+  color: #000;
+  padding: 1em 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  transition: 300ms;
+  text-decoration: none;
+}
+
+.call__btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(5em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .about-text {
+    padding: 0 4em 0 2em;
+  }
+
+  .destination__about-text {
+    padding: 0 2em 0 4em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .about-text {
+    order: 1;
+    margin-bottom: 20em;
+    padding: 0 1.5em;
+  }
+}
